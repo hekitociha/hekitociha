@@ -17,16 +17,17 @@ namespace class_uravnenie
         static void Main(string[] args)
         {
             Uravnenie mU = new Uravnenie();
-            Console.WriteLine("Введем данные уравния типа a*x=b");
+            Console.WriteLine("Введем данные уравния вида a*x=b");
             Console.WriteLine("a = ");
             mU.a = Convert.ToDouble(Console.ReadLine());
-            if (mU.a == 0) 
-                { 
-                    Console.WriteLine("Уравнение не имеет корней"); 
-                    return;
-                }
             Console.WriteLine("b = ");
             mU.b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Получили уравнение: " + mU.a+"*x="+mU.b);
+            if (mU.a == 0)
+            {
+                Console.WriteLine("Уравнение не имеет корней");
+                return;
+            }
             Console.WriteLine("X = " + mU.Reshenie(mU.a, mU.b));
         }
     }
